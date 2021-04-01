@@ -1,11 +1,7 @@
 use reqwest::blocking::get;
-#[allow(unused_imports)]
 use std::env::args;
-#[allow(unused_imports)]
 use std::io::prelude::*;
-#[allow(unused_imports)]
 use std::fs::File;
-#[allow(unused_imports)]
 use console::style;
 
 fn main() -> Result<(), Box<dyn std::error::Error>> {
