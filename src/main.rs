@@ -10,12 +10,17 @@ fn main() -> Result<(), Box<dyn std::error::Error>> {
     
     let data_to_dl:Vec<String> = args().collect();
     
+    if data_to_dl.len() == 1 {
+        println!("{}", style("Error: Not enough arguments!").red());
+        return Ok(());
+    }
+
     let data_string = format!("{}", data_to_dl[1]);
 
     let data = get(&data_string)?
         .text()?;
 
-    if data_to_dl.len() < 2 {
+    if data_to_dl.len() < 3 {
 
         println!("{}", data);
         return Ok(());
